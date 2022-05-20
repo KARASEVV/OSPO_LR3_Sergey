@@ -1,0 +1,228 @@
+body,html{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(215, 215, 215);
+    overflow: hidden;
+}
+.checkbox-green {
+	display: inline-block;    
+	height: 28px;    
+	line-height: 28px;  
+	margin-right: 10px;      
+	position: relative;
+	vertical-align: middle;
+	font-size: 14px;
+	user-select: none;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    z-index: 5;
+}
+.checkbox-green .checkbox-green-switch {
+	display: inline-block;	
+	height: 28px;
+	width: 90px;
+	box-sizing: border-box;
+	position: relative;	
+	border-radius: 28px;
+	background: #848484;
+	transition: background-color 0.3s cubic-bezier(0, 1, 0.5, 1);
+}
+.checkbox-green .checkbox-green-switch:before {
+	content: attr(data-label-on);
+	display: inline-block;
+	box-sizing: border-box;
+	width: 45px;
+	padding: 0 12px;	
+	position: absolute;
+	top: 0;
+	left: 45px;	
+	text-transform: uppercase;
+	text-align: center;
+	color: rgba(255, 255, 255, 0.5);
+	font-size: 10px;
+	line-height: 28px;
+}
+.checkbox-green .checkbox-green-switch:after {
+	content: attr(data-label-off);
+	display: inline-block;
+	box-sizing: border-box;	
+	width: 44px;	
+	border-radius: 27px;	
+	position: absolute;
+	top: 1px;
+	left: 1px;	
+	z-index: 5;
+	text-transform: uppercase;
+	text-align: center;
+	background: white;
+	line-height: 26px;
+	font-size: 10px;
+	color: #777;	
+	transition: transform 0.3s cubic-bezier(0, 1, 0.5, 1);
+}
+.checkbox-green input[type="checkbox"] {
+	display: block;	
+	width: 0;
+	height: 0;	
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+}
+.checkbox-green input[type="checkbox"]:checked + .checkbox-green-switch {
+	background-color: #848484;
+}
+.checkbox-green input[type="checkbox"]:checked + .checkbox-green-switch:before {
+	content: attr(data-label-off);
+	left: 0;
+}
+.checkbox-green input[type="checkbox"]:checked + .checkbox-green-switch:after {
+	content: attr(data-label-on);
+	color: #848484;
+	transform: translate3d(44px, 0, 0);
+}
+ 
+/* Hover */
+.checkbox-green input[type="checkbox"]:not(:disabled) + .checkbox-green-switch:hover {
+	cursor: pointer;
+}
+.checkbox-green input[type="checkbox"]:not(:disabled) + .checkbox-green-switch:hover:after {
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.4);
+}
+ 
+/* Disabled */
+.checkbox-green input[type=checkbox]:disabled + .checkbox-green-switch {
+	opacity: 0.6;   
+	filter: grayscale(50%);
+}
+ 
+/* Focus */
+.checkbox-green.focused .checkbox-green-switch:after {
+	box-shadow: inset 0px 0px 4px #ff5623;
+}
+@keyframes taking_form {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+.main{
+    position: relative;
+    height: 100%;
+    width: 30%;
+    background-color: yellowgreen;
+}
+.personal_info{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(44, 44, 44);
+    z-index: 2;
+}
+.photo{
+    position: relative;
+    top: 5%;
+    left: 15%;
+    height: 400px;
+    width: 400px;
+    border-radius: 200px;
+    animation: taking_form  1s;
+}
+.name{
+    position: relative;
+    top: 5%;
+    left: 5%;
+    width: 85%;
+    text-align: left;
+    font-size: 50px;
+    animation: taking_form  2s;
+}
+.age{
+    position: relative;
+    top: 5%;
+    left: 5%;
+    width: 85%;
+    text-align: left;
+    font-size: 30px;
+    animation: taking_form  2s;
+}
+.personal_skills{
+    position: relative;
+    top: 10%;
+    left: 5%;
+    width: 85%;
+    text-align: left;
+    font-size: 25px;
+    animation: taking_form  2s;
+}
+.contacts{
+    position: relative;
+    top: 20%;
+    left: 5%;
+    width: 85%;
+    text-align: left;
+    font-size: 25px;
+    animation: taking_form  2s;
+}
+.professional_info{
+    position: absolute;
+    top: 0%;
+    left: 100%;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(66, 66, 66);
+    z-index: 1;
+    animation: move  1s;
+}
+@keyframes move {
+    from {left: 0%;}
+    to {left: 100%;}
+}
+.target{
+    position: relative;
+    top: 3%;
+    left: 5%;
+    width: 85%;
+    text-align: left;
+    font-size: 30px;
+}
+.langs{
+    position: relative;
+    top: 5%;
+    left: 5%;
+    width: 85%;
+    text-align: left;
+    font-size: 25px;
+}
+.experience{
+    position: relative;
+    top: 8%;
+    left: 5%;
+    width: 85%;
+    text-align: left;
+    font-size: 25px;
+}
+.edu{
+    position: relative;
+    top: 10%;
+    left: 5%;
+    width: 85%;
+    text-align: left;
+    font-size: 25px;
+}
+.human_langs{
+    position: relative;
+    top: 12%;
+    left: 5%;
+    width: 85%;
+    text-align: left;
+    font-size: 25px;
+}
+.grand_img{
+    height: 100%;
+    width: 70%;
+    background-color: rgb(150, 150, 150);
+    background-image: url(fon.jpeg);
+    z-index: 0;
+}

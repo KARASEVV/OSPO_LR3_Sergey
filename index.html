@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+    <title>Карасев Сергей</title>
+</head>
+<script>
+    function SetLeng(){
+        if (leng.checked) {
+            p_i.style.backgroundColor= "rgb(215, 215, 215)";
+            pr_i.style.backgroundColor= "rgb(200, 200, 200)";
+            document.body.style.color= "rgb(44, 44, 44)";
+        }
+        else {
+            p_i.style.backgroundColor= "rgb(44, 44, 44)";
+            pr_i.style.backgroundColor= "rgb(66, 66, 66)";
+            document.body.style.color= "rgb(215, 215, 215)";
+        }
+    }
+</script>
+<body>
+    <label class="checkbox-green">
+        <input type="checkbox" id="leng" onchange="SetLeng()">
+        <span class="checkbox-green-switch" data-label-on="L" data-label-off="D"></span>
+    </label>
+    <div class="main">
+        <div class="personal_info" id="p_i">
+            <img src="i.png" alt="Мое лицо" class="photo">
+            <div class="name">Карасев Сергей</div>
+            <div class="age"> 20 лет</div>
+            <div class="personal_skills">
+                <strong>Личные навыки</strong>
+                    <li>Харизма</li>
+                    <li>Умение принимать решения и нести за них ответственность</li>
+                    <li>Желание учиться</li>
+            </div>
+            <div class="personal_skills">
+                <a href="form.html">Практическая часть</a>
+            </div>
+            <div class="contacts">
+                <strong>Контакты: </strong><br>
+                Тел: 8 977 270 69 26<br>
+                Почта: Cream4Life@yandex.ru
+            </div>
+        </div>
+        <div class="professional_info" id="pr_i">
+            <div class="target">
+                <strong>Цель:</strong> программист
+            </div>
+            <div class="langs">
+                <strong>Проф. навыки</strong>
+                <li>C# - Знание синтексиса</li>
+                <li>C++ - Знание синтексиса</li>
+                <li>Unity - Уверенное владение</li>
+                <li>Xamarine - Уверенное владение</li>
+                <li>Arduino - Уверенное владение</li>
+                <li>HTML, CSS - Уверенное владение</li>
+                <li>JS - Знание синтексиса</li>
+                <li>Photoshop, Illustrator - Уверенное владение</li>
+            </div>
+            <div class="experience">
+                <strong>Опыт</strong>
+                <li>Работа над логотипом и прототипом приложения Unikey</li>
+                <li>Работа над играми CosmoTrash, ShutUpFans, ЗОЙ</li>
+                <li>Участие в хакатонах </li>
+                <li>Подсобный рабочий на Яхромском РГС, филиал ФГБУ "Канал им. Москвы"</li>
+            </div>
+            <div class="edu">
+                <strong>Образование</strong><br>
+                МГТУ "СТАНКИН"
+                Автоматизация производственных процессов - 
+                3 курс
+            </div>
+            <div class="human_langs">
+                <strong>Знание языков</strong>
+                <li>Русский - родной</li>
+                <li>Русский матерный - advanced</li>
+            </div>
+        </div>
+    </div>
+    <div class="grand_img"></div>
+</body>
+</html>

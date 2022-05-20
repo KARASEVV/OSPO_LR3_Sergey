@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+    <title>Индивидуальные задания</title>
+</head>
+<style>
+    body{
+        font-family: 'Montserrat', sans-serif;
+    }
+    .label{
+        font-size: 30px;
+        height: 40px;
+        line-height: 40px;
+    }
+    .sub_label{
+        font-size: 20px;
+    }
+    .sForm{
+        font-size: 15px;
+        width: 150px;
+        height: 40px;
+        border-radius: 40px;
+        background-color: rgb(200, 200, 200);
+        color:rgb(255, 255, 255);
+        background-color: rgb(160, 160, 160);
+        text-align: center;
+        line-height: 40px;
+        cursor: pointer;
+    }
+    .sForm:hover{
+        background-color: rgb(160, 160, 160);
+        color:rgb(255, 255, 255);
+        background-color: rgb(110, 110, 110);
+    }
+    .inp{
+        width: 300px;
+        height: 30px;
+        border: none;
+        border-bottom: 1px solid #333333;
+        font-family: 'Montserrat', sans-serif;
+    }
+    .button{
+        width: 150px;
+        height: 40px;
+        border-radius: 40px;
+        font-family: 'Montserrat', sans-serif;
+        background-color: rgb(200, 200, 200);
+        color:rgb(255, 255, 255);
+        background-color: rgb(160, 160, 160);
+        border: 2px solid #444400;
+        margin-top: 15px;
+        cursor: pointer;
+        font-size: 10px;
+    }
+    .button:hover{
+        font-family: 'Montserrat', sans-serif;
+        background-color: rgb(160, 160, 160);
+        color:rgb(255, 255, 255);
+        background-color: rgb(110, 110, 110);
+        border: 2px solid #444400;
+    }
+    /*.vkl{
+        display: none;
+    }*/
+</style>
+<script>
+    function Start(){
+        vkl.style.display = "none";
+        forma.style.display = "none";
+    }
+    function calcD() {
+        if(_i1.value<_i2.value)
+            alert(_i1.value);
+        if(_i2.value<_i1.value)
+            alert(_i2.value);
+        if(_i2.value==_i1.value)
+            alert("Они равны");
+    }
+    function sayMyName() {
+        let name = "Сергей";
+        let admin;
+        admin = name;
+        alert(admin);
+    }
+    function oldyAreHere() {
+        var year = prompt('Сколько вам лет?','Введите сюда ваш возраст');
+        var tochno = confirm('Вы уверены, что вам '+year+'?');
+        if(!tochno)
+            oldyAreHere();
+        if(tochno)
+            alert('Все ясно, автору '+year+' лет');
+    }
+    function Check() {
+        if((_i1.value!="")&&(_i2.value!="")&&(_name.value!="")&&(comm.value!="")){
+            vkl.style.display = "block";
+            setForm.style.display = "none";
+        }
+    }
+    function _сheck() {
+        if((l1.checked)||(l2.checked)||(l3.checked)||(l4.checked)||(l5.checked))
+        if(l6.checked){
+            alert("Видимо, умеете прогать и считать"); 
+            return true;
+        }
+    }
+    function viklCheck(){
+        l1.setAttribute("disabled", "false");
+        l2.setAttribute("disabled", "false");
+        l3.setAttribute("disabled", "false");
+        l4.setAttribute("disabled", "false");
+        l5.setAttribute("disabled", "false");
+    }
+    function SetForm(){
+        forma.style.display = "block";
+    }
+</script>
+<body onload="Start()">
+    <div class="sForm" id="setForm" onclick="SetForm()">Заполнить форму</div>
+    <div id="forma">
+        <div class="label">Индивидуальное задание №1</div>
+        <input class="inp" type="text" size="40" onchange="Check()" placeholder="Число №1" id = "_i1">
+        <br>
+        <input class="inp" type="text" size="40" onchange="Check()" placeholder="Число №2" id = "_i2">
+        <br>
+        <input type="submit" class="button" value="Проверить" onclick="calcD()">
+        <div class="label">Индивидуальное задание №2</div>
+        <input type="submit" class="button" value="Спросить про имя" onclick="sayMyName()">
+        <div class="label">Индивидуальное задание №3</div>
+        <input type="submit" class="button" value="Спросить про возраст" onclick="oldyAreHere()">
+        <div class="label">Индивидуальное задание №4</div>
+        <div class="sub_label">Ваше имя:</div>
+        <input class="inp" type="text" size="40" onchange="Check()" placeholder="Имя сюда" id = "_name">
+        <div class="sub_label">Каким браузером в основном пользуетесь</div>
+        <p><input type="checkbox" value="C#" id="l2">C#</p>
+        <p><input type="checkbox" value="Язык РКС" id="l4">Язык РКС</p>
+        <p><input type="checkbox" value="G код" id="l5">G код</p>
+        <p><input type="checkbox" value="Знание математики" id="l6" onclick="_сheck()">Знание математики</p>
+        <div class="sub_label">Комментарий</div>
+        <textarea name="comment" onchange="Check()" cols="40" rows="3" id = "comm"></textarea>
+        <input type="submit" class="sForm" value="Меня возьмут!" onclick="viklCheck()" id="vkl">
+    </div>
+</body>
+</html>
